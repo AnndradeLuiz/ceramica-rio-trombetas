@@ -1,0 +1,1033 @@
+.menu-toggle {
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.menu-toggle[hidden] {
+  display: none;
+}
+
+.menu-toggle:hover,
+.menu-toggle[aria-expanded="true"] {
+  border-color: var(--color-brand-green);
+  background: var(--color-bg);
+}
+
+.header-cta {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: var(--color-brand-green);
+  color: var(--color-surface);
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+
+.header-cta:visited {
+  color: var(--color-surface);
+}
+
+.header-cta:hover {
+  background: var(--color-brand-green-hover);
+  color: var(--color-surface);
+}
+
+.header-cta:focus-visible {
+  outline-color: var(--color-terracotta-dark);
+}
+
+@media (min-width: 1024px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.product-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: 0 4px 16px rgb(43 39 35 / 6%);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgb(43 39 35 / 10%);
+}
+
+.product-card__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface-alt);
+}
+
+.product-card__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: var(--space-4);
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-card__media img {
+  transform: scale(1.03);
+}
+
+.product-card__image-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  text-align: center;
+}
+
+.product-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5);
+}
+
+.product-card__title {
+  font-size: var(--font-size-xl);
+}
+
+.product-card__quality {
+  color: var(--color-terracotta-dark);
+  font-weight: 600;
+}
+
+.product-card__detail,
+.product-card__price-label,
+.product-card__commercial-note {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.product-card__availability {
+  width: fit-content;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-alt);
+  color: var(--color-terracotta-dark);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.product-card__pricing {
+  display: grid;
+  gap: var(--space-1);
+  margin-block-start: auto;
+  padding-block-start: var(--space-4);
+}
+
+.product-card__price {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+}
+
+.product-card__thousand-price {
+  font-weight: 600;
+}
+
+.product-card__commercial-note {
+  margin-block-start: var(--space-2);
+}
+
+.product-card__action {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  margin-block-start: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: var(--color-brand-green);
+  color: var(--color-surface);
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+
+.product-card__action:visited {
+  color: var(--color-surface);
+}
+
+.product-card__action:hover {
+  background: var(--color-brand-green-hover);
+  color: var(--color-surface);
+}
+
+.product-card__action:active {
+  background: var(--color-terracotta-dark);
+}
+
+.product-card__contact-pending {
+  margin-block-start: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* Botões Reutilizáveis */
+.btn {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-5);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn--primary {
+  background: var(--color-brand-green);
+  color: var(--color-surface);
+}
+
+.btn--primary:hover {
+  background: var(--color-brand-green-hover);
+  color: var(--color-surface);
+}
+
+.btn--primary:visited {
+  color: var(--color-surface);
+}
+
+.btn--secondary {
+  border-color: var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.btn--secondary:hover {
+  border-color: var(--color-brand-green);
+  background: var(--color-bg);
+}
+
+.btn--whatsapp {
+  background: var(--color-whatsapp);
+}
+
+.btn--whatsapp:hover {
+  background: #0e7266;
+}
+
+/* Seletor de Tipo de Atendimento (PF / PJ) */
+.quotation-app {
+  display: grid;
+  gap: var(--space-6);
+  margin-block-start: var(--space-5);
+}
+
+.customer-type-selector {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.customer-type-selector__legend {
+  margin-block-end: var(--space-3);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+}
+
+.customer-type-selector__options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-3);
+}
+
+.customer-type-option {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.customer-type-option:hover {
+  border-color: var(--color-brand-green);
+  background: var(--color-bg);
+}
+
+.customer-type-option:has(:focus-visible) {
+  outline: 2px solid var(--color-terracotta-dark);
+  outline-offset: 2px;
+}
+
+.customer-type-option--selected {
+  border-color: var(--color-brand-green);
+  background: var(--color-surface-alt);
+  color: var(--color-brand-green);
+}
+
+.customer-type-option__input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--color-brand-green);
+  cursor: pointer;
+}
+
+/* Painel Pessoa Jurídica */
+.pj-card {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: 0 4px 16px rgb(43 39 35 / 6%);
+}
+
+.pj-card__title {
+  color: var(--color-brand-green);
+  font-size: var(--font-size-xl);
+}
+
+.pj-card__description {
+  max-width: 60ch;
+  color: var(--color-text-muted);
+}
+
+.pj-card__actions {
+  margin-block-start: var(--space-3);
+}
+
+.pj-card__pending {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* Indicador de Etapas do Orçamento */
+.quotation-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-6);
+  padding: 0;
+  list-style: none;
+}
+
+.quotation-steps__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.quotation-steps__item--active {
+  border-color: var(--color-brand-green);
+  background: var(--color-brand-green);
+  color: var(--color-surface);
+  font-weight: 600;
+}
+
+.quotation-steps__item--completed {
+  border-color: var(--color-brand-green);
+  color: var(--color-brand-green);
+}
+
+.quotation-steps__number {
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+}
+
+.quotation-steps__item--active .quotation-steps__number {
+  background: var(--color-surface);
+  color: var(--color-brand-green);
+}
+
+.quotation-steps__item--completed .quotation-steps__number {
+  background: var(--color-brand-green);
+  color: var(--color-surface);
+}
+
+/* Formulário de Etapa */
+.quotation-step {
+  display: grid;
+  gap: var(--space-5);
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: 0 4px 16px rgb(43 39 35 / 6%);
+}
+
+.quotation-step__title {
+  font-size: var(--font-size-xl);
+}
+
+.quotation-step__intro {
+  margin-block-start: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.quotation-form {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.form-group {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+}
+
+.form-input {
+  min-height: 48px;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--font-size-base);
+}
+
+.form-input:focus-visible {
+  outline: 2px solid var(--color-brand-green);
+  outline-offset: 1px;
+}
+
+.form-input--error {
+  border-color: var(--color-error);
+  background: #fff8f8;
+}
+
+.form-input--error:focus-visible {
+  outline-color: var(--color-error);
+}
+
+.field-error {
+  min-height: 1.25rem;
+  color: var(--color-error);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+}
+
+.quotation-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-block-start: var(--space-4);
+}
+
+@media (max-width: 480px) {
+  .quotation-form__actions .btn {
+    width: 100%;
+  }
+}
+
+/* Etapa 2: Adição de Produtos */
+.quotation-add-product {
+  padding: var(--space-5);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+}
+
+.quotation-add-product__title {
+  margin-block-end: var(--space-3);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+}
+
+.quotation-add-form {
+  display: grid;
+  gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .quotation-add-form {
+    grid-template-columns: minmax(0, 1.8fr) minmax(130px, 0.8fr) auto;
+    align-items: flex-end;
+  }
+}
+
+.form-select {
+  cursor: pointer;
+}
+
+/* Lista do Carrinho */
+.quotation-cart {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.quotation-cart__title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+}
+
+.quotation-cart__list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.quotation-cart__empty {
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  text-align: center;
+}
+
+.cart-item {
+  display: grid;
+  gap: var(--space-3);
+  align-items: center;
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+
+@media (min-width: 640px) {
+  .cart-item {
+    grid-template-columns: minmax(0, 2fr) auto auto auto;
+    gap: var(--space-4);
+  }
+}
+
+.cart-item__info {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.cart-item__name {
+  font-size: var(--font-size-base);
+}
+
+.cart-item__details {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.cart-item__quantity {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.cart-item__qty-label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.form-input--compact {
+  width: 90px;
+  min-height: 44px;
+  padding: var(--space-1) var(--space-2);
+  text-align: center;
+}
+
+.cart-item__subtotal {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.cart-item__subtotal-label {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.cart-item__subtotal-value {
+  color: var(--color-text);
+  font-size: var(--font-size-lg);
+}
+
+.btn--danger {
+  min-height: 44px;
+  padding: var(--space-1) var(--space-3);
+  border-color: var(--color-border);
+  background: transparent;
+  color: var(--color-error);
+  font-size: var(--font-size-sm);
+}
+
+.btn--danger:hover {
+  border-color: var(--color-error);
+  background: #fff8f8;
+}
+
+/* Bloco de Total Estimado */
+.quotation-total-box {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-5);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-alt);
+}
+
+.quotation-total-box__label {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.quotation-total-box__value {
+  color: var(--color-brand-green);
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+}
+
+.quotation-total-box__note {
+  margin-block-start: var(--space-1);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.field-error--global {
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  background: #fff8f8;
+  border: 1px solid var(--color-error);
+  font-size: var(--font-size-sm);
+}
+
+/* Etapa 3: Elegibilidade e Modalidades de Recebimento */
+.eligibility-box {
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.eligibility-box--success {
+  border: 1px solid var(--color-brand-green);
+  background: #eaf6ee;
+  color: var(--color-brand-green-hover);
+}
+
+.eligibility-box--warning {
+  border: 1px solid var(--color-warning);
+  background: #fdf6e6;
+  color: #7a4f00;
+}
+
+.receiving-methods {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.receiving-methods__legend {
+  margin-block-end: var(--space-3);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+}
+
+.receiving-methods__options {
+  display: grid;
+  gap: var(--space-3);
+}
+
+@media (min-width: 640px) {
+  .receiving-methods__options {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.receiving-method-option {
+  display: flex;
+  min-height: 56px;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.receiving-method-option:hover:not(.receiving-method-option--disabled) {
+  border-color: var(--color-brand-green);
+  background: var(--color-bg);
+}
+
+.receiving-method-option--selected {
+  border-color: var(--color-brand-green);
+  background: var(--color-surface-alt);
+}
+
+.receiving-method-option--disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  border-color: var(--color-border);
+  background: #f0ebe4;
+}
+
+.receiving-method-option__input {
+  width: 20px;
+  height: 20px;
+  margin-block-start: 2px;
+  accent-color: var(--color-brand-green);
+}
+
+.receiving-method-option__text-wrap {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.receiving-method-option__title {
+  font-size: var(--font-size-base);
+}
+
+.receiving-method-option__badge {
+  display: inline-block;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-alt);
+  color: var(--color-terracotta-dark);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
+.receiving-method-option__badge--free {
+  background: #eaf6ee;
+  color: var(--color-brand-green);
+}
+
+.receiving-conditional-fields {
+  display: grid;
+  gap: var(--space-5);
+  padding-block-start: var(--space-4);
+  border-block-start: 1px solid var(--color-border);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.unload-notice {
+  padding: var(--space-4) var(--space-5);
+  border-left: 4px solid var(--color-terracotta);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+.unload-notice--info {
+  border-left-color: var(--color-brand-green);
+}
+
+.address-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .address-grid {
+    grid-template-columns: minmax(0, 3fr) minmax(120px, 1fr);
+  }
+
+  .address-grid .form-group:nth-child(3),
+  .address-grid .form-group:nth-child(4),
+  .address-grid .form-group:nth-child(5) {
+    grid-column: 1 / -1;
+  }
+}
+
+.form-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.form-hint {
+  display: block;
+  margin-block-end: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+/* Etapa 4: Painel de Revisão */
+.review-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.review-card {
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.review-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-end: var(--space-3);
+  padding-block-end: var(--space-2);
+  border-block-end: 1px solid var(--color-border);
+}
+
+.review-card__title {
+  color: var(--color-brand-green);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+}
+
+.review-card__edit-btn {
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-1) var(--space-2);
+  border: none;
+  background: transparent;
+  color: var(--color-terracotta-dark);
+  font: inherit;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.review-card__edit-btn:hover {
+  color: var(--color-brand-green);
+}
+
+.review-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-2) var(--space-3);
+  margin: 0;
+  font-size: var(--font-size-sm);
+}
+
+.review-list__term {
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.review-list__desc {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.review-items-table {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.review-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) 0;
+  border-block-end: 1px dashed var(--color-border);
+  font-size: var(--font-size-sm);
+}
+
+.review-item-row__info {
+  display: grid;
+  gap: 2px;
+}
+
+.review-item-row__name {
+  font-size: var(--font-size-sm);
+}
+
+.review-item-row__detail {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.review-item-row__subtotal {
+  font-size: var(--font-size-base);
+}
+
+.review-total-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-start: var(--space-3);
+  padding-block-start: var(--space-2);
+  font-size: var(--font-size-lg);
+}
+
+.review-total-row__value {
+  color: var(--color-brand-green);
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+}
+
+/* Avisos Comerciais Obrigatórios (SPEC §17) */
+.commercial-notices {
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-alt);
+}
+
+.commercial-notices__title {
+  margin-block-end: var(--space-3);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+}
+
+.commercial-notices__list {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding-inline-start: var(--space-5);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+.commercial-notices__item {
+  color: var(--color-text);
+}
+
+/* Termo de Consentimento */
+.terms-consent-group {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-5);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.terms-consent-label {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.terms-consent-checkbox {
+  width: 22px;
+  height: 22px;
+  margin-block-start: 2px;
+  accent-color: var(--color-brand-green);
+  cursor: pointer;
+}
+
+.terms-consent-checkbox--error {
+  outline: 2px solid var(--color-error);
+  outline-offset: 2px;
+}
+
+/* Etapa 5: Envio e Prévia do WhatsApp (SPEC §18) */
+.quotation-message-preview {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-alt);
+}
+
+.quotation-message-preview__title {
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+}
+
+.quotation-message-preview__text {
+  margin: 0;
+  padding: var(--space-4);
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.quotation-message-preview__help {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  line-height: 1.5;
+}
