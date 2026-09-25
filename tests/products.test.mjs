@@ -67,8 +67,8 @@ test("3ª qualidade fica fora do orçamento; laje com preço entra sem contar pa
 
 test("configuração usa o contato, endereço e horários confirmados e mantém e-mail pendente", () => {
   assert.equal(company.name, "Cerâmica Rio Trombetas");
-  assert.equal(company.whatsappDisplay, "93 9165-4576");
-  assert.equal(company.whatsappE164, "+559391654576");
+  assert.equal(company.whatsappDisplay, "93 98765-4321");
+  assert.equal(company.whatsappE164, "+5593987654321");
   assert.ok(typeof company.address === "string" && company.address.includes("Oriximiná"));
   assert.ok(typeof company.openingHours === "string" && company.openingHours.includes("08h às 12h"));
   assert.equal(company.email, null);

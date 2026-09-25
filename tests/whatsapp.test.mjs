@@ -21,12 +21,12 @@ test("isValidE164: valida formato internacional padrão E.164", () => {
 });
 
 test("buildWhatsAppUrl: constrói URL wa.me com encodeURIComponent; retorna null se E.164 for nulo ou inválido", () => {
-  const url = buildWhatsAppUrl("+559391654576", "Olá, mundo!");
-  assert.equal(url, "https://wa.me/559391654576?text=Ol%C3%A1%2C%20mundo!");
+  const url = buildWhatsAppUrl("+5593987654321", "Olá, mundo!");
+  assert.equal(url, "https://wa.me/5593987654321?text=Ol%C3%A1%2C%20mundo!");
 
   // Sem mensagem, retorna a URL base sem parâmetro ?text
-  assert.equal(buildWhatsAppUrl("+559391654576"), "https://wa.me/559391654576");
-  assert.equal(buildWhatsAppUrl("+559391654576", ""), "https://wa.me/559391654576");
+  assert.equal(buildWhatsAppUrl("+5593987654321"), "https://wa.me/5593987654321");
+  assert.equal(buildWhatsAppUrl("+5593987654321", ""), "https://wa.me/5593987654321");
 
   // Sem número internacional válido, não inventa URL presumida
   assert.equal(buildWhatsAppUrl(null, "Mensagem"), null);

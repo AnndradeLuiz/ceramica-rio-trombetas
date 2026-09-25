@@ -1,8 +1,8 @@
 // Dados comerciais reutilizados. Campos sem confirmação permanecem nulos.
 export const company = {
   name: "Cerâmica Rio Trombetas",
-  whatsappDisplay: "93 9165-4576",
-  whatsappE164: "+559391654576",
+  whatsappDisplay: "93 98765-4321",
+  whatsappE164: "+5593987654321",
   address: "Rua Marechal Castelo Branco, 1035 — Novo Horizonte, Oriximiná - PA, CEP 68270-000",
   mapCoords: "-1.7473210781657804,-55.87682018179472",
   mapEmbedUrl: "https://maps.google.com/maps?q=-1.7473210781657804,-55.87682018179472&z=16&output=embed",

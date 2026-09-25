@@ -36,7 +36,7 @@ test("3ª qualidade tem preço de referência e consulta direta, sem ação de o
   assert.equal(details.thousandPrice, "R$ 900,00");
   assert.equal(details.availability, "Disponibilidade sob consulta");
   assert.equal(details.commercialNote, null);
-  assert.deepEqual(details.action, { label: "Consultar pelo WhatsApp", href: "https://wa.me/559391654576", external: true });
+  assert.deepEqual(details.action, { label: "Consultar pelo WhatsApp", href: "https://wa.me/5593987654321", external: true });
 });
 
 test("laje mostra o preço informado; produto sem dimensão não ganha texto fictício", () => {
